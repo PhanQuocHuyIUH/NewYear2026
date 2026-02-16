@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎆 Happy New Year 2026 🐴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow: hidden;
+        background: linear-gradient(to bottom, #0a0015, #1a0030, #0d001a);
+        font-family: "Georgia", serif;
+        height: 100vh;
+        width: 100vw;
+        cursor:
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 160 120'%3E%3Cellipse cx='80' cy='65' rx='40' ry='22' fill='%238B4513'/%3E%3Cpath d='M 110 55 Q 125 30 120 15' stroke='%238B4513' stroke-width='14' fill='none' stroke-linecap='round'/%3E%3Cellipse cx='125' cy='14' rx='16' ry='10' fill='%238B4513' transform='rotate(-15, 125, 14)'/%3E%3Cpolygon points='132,5 136,-5 128,2' fill='%238B4513'/%3E%3Cpolygon points='120,6 124,-4 116,3' fill='%238B4513'/%3E%3Ccircle cx='130' cy='12' r='2.5' fill='white'/%3E%3Ccircle cx='131' cy='12' r='1.2' fill='%23222'/%3E%3Cpath d='M 118 8 Q 110 15 112 28 Q 108 20 106 35' stroke='%232a1506' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M 40 58 Q 20 45 15 55 Q 10 40 8 60' stroke='%232a1506' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cline x1='95' y1='82' x2='100' y2='110' stroke='%238B4513' stroke-width='6' stroke-linecap='round'/%3E%3Cline x1='85' y1='84' x2='88' y2='112' stroke='%238B4513' stroke-width='6' stroke-linecap='round'/%3E%3Cline x1='65' y1='82' x2='60' y2='112' stroke='%238B4513' stroke-width='6' stroke-linecap='round'/%3E%3Cline x1='55' y1='84' x2='52' y2='110' stroke='%238B4513' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E")
+            16 16,
+          auto;
+      }
+
+      /* Stars */
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 2s infinite alternate;
+      }
+      @keyframes twinkle {
+        0% {
+          opacity: 0.2;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      /* Fireworks Canvas */
+      #fireworksCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Main Text */
+      .celebration-text {
+        position: fixed;
+        top: 12%;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+        pointer-events: none;
+      }
+      .celebration-text h1 {
+        font-size: 5rem;
+        color: transparent;
+        background: linear-gradient(
+          90deg,
+          #ff6b6b,
+          #ffd93d,
+          #6bff6b,
+          #6bd9ff,
+          #d96bff,
+          #ff6b6b
+        );
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shineText 4s linear infinite;
+        text-shadow: 0 0 40px rgba(255, 200, 50, 0.3);
+        letter-spacing: 4px;
+      }
+      .celebration-text h2 {
+        font-size: 2rem;
+        color: #ffd93d;
+        margin-top: 10px;
+        animation: pulse 2s ease-in-out infinite;
+        text-shadow: 0 0 20px rgba(255, 217, 61, 0.5);
+      }
+      .celebration-text .emoji-row {
+        font-size: 2.5rem;
+        margin-top: 15px;
+        animation: bounce 1.5s ease-in-out infinite;
+      }
+      @keyframes shineText {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 300% 50%;
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Ground */
+      .ground {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 120px;
+        background: linear-gradient(to top, #1a3a1a, #0d200d, transparent);
+        z-index: 5;
+      }
+      .ground::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background: linear-gradient(to top, #2a5a2a, #1a3a1a);
+        border-top: 2px solid #3a7a3a;
+      }
+
+      /* Grass blades */
+      .grass {
+        position: fixed;
+        bottom: 55px;
+        width: 100%;
+        height: 30px;
+        z-index: 6;
+        pointer-events: none;
+      }
+      .grass-blade {
+        position: absolute;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to top, #3a7a3a, #2a5a2a);
+        border-radius: 50% 50% 0 0;
+        transform-origin: bottom center;
+        animation: sway 3s ease-in-out infinite;
+      }
+      @keyframes sway {
+        0%,
+        100% {
+          transform: rotate(-5deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+      }
+
+      /* Horse */
+      .horse-container {
+        position: fixed;
+        bottom: 60px;
+        z-index: 8;
+        transition: none;
+      }
+
+      .horse {
+        position: relative;
+        animation: horseGallop 0.4s ease-in-out infinite;
+      }
+      .horse svg {
+        width: 160px;
+        height: 120px;
+      }
+      @media (max-width: 768px) {
+        .horse svg {
+          width: 100px;
+          height: 75px;
+        }
+      }
+      @media (max-width: 480px) {
+        .horse svg {
+          width: 75px;
+          height: 56px;
+        }
+      }
+
+      @keyframes horseGallop {
+        0% {
+          transform: translateY(0px);
+        }
+        25% {
+          transform: translateY(-12px);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+        75% {
+          transform: translateY(-14px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Horse counter */
+      .horse-counter {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 20;
+        background: rgba(0, 0, 0, 0.5);
+        border: 2px solid #ffd93d;
+        border-radius: 12px;
+        padding: 10px 18px;
+        color: #ffd93d;
+        font-size: 1.1rem;
+        font-family: Georgia, serif;
+        pointer-events: none;
+        text-shadow: 0 0 10px rgba(255, 217, 61, 0.5);
+        backdrop-filter: blur(5px);
+      }
+      .horse-counter span {
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #fff;
+      }
+
+      /* SVG Horse body parts animation */
+      .horse-body {
+        position: relative;
+        width: 140px;
+        height: 100px;
+      }
+
+      /* Lantern decorations */
+      .lantern {
+        position: fixed;
+        z-index: 4;
+        animation: lanternSway 4s ease-in-out infinite;
+      }
+      @keyframes lanternSway {
+        0%,
+        100% {
+          transform: rotate(-3deg);
+        }
+        50% {
+          transform: rotate(3deg);
+        }
+      }
+
+      /* Confetti */
+      .confetti {
+        position: fixed;
+        z-index: 3;
+        animation: fall linear infinite;
+        pointer-events: none;
+      }
+      @keyframes fall {
+        0% {
+          transform: translateY(-10vh) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(110vh) rotate(720deg);
+          opacity: 0.3;
+        }
+      }
+
+      /* Countdown / message */
+      .message {
+        position: fixed;
+        bottom: 140px;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+        pointer-events: none;
+      }
+      .message p {
+        color: #ffddaa;
+        font-size: 1.2rem;
+        font-style: italic;
+        text-shadow: 0 0 10px rgba(255, 200, 100, 0.5);
+        animation: fadeInOut 5s ease-in-out infinite;
+      }
+      @keyframes fadeInOut {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* Notification popup */
+      .notification-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+      }
+      .notification-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .notification-box {
+        background: linear-gradient(135deg, #1a0030, #2d1b69, #1a0030);
+        border: 3px solid #ffd93d;
+        border-radius: 20px;
+        padding: 40px 50px;
+        max-width: 600px;
+        text-align: center;
+        box-shadow:
+          0 0 60px rgba(255, 217, 61, 0.4),
+          0 0 120px rgba(255, 100, 100, 0.2);
+        transform: scale(0.7);
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+      }
+      .notification-overlay.show .notification-box {
+        transform: scale(1);
+      }
+      .notification-box .notif-emoji {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        animation: bounce 1.5s ease-in-out infinite;
+      }
+      .notification-box .notif-text {
+        color: #fff;
+        font-size: 1.3rem;
+        line-height: 1.9;
+        font-family: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+        font-weight: 400;
+        text-shadow: 0 0 10px rgba(255, 217, 61, 0.3);
+      }
+      .notification-box .notif-close {
+        margin-top: 25px;
+        padding: 12px 36px;
+        background: linear-gradient(135deg, #ffd93d, #ff9f43);
+        border: none;
+        border-radius: 30px;
+        color: #1a0030;
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 4px 15px rgba(255, 217, 61, 0.4);
+      }
+      .notification-box .notif-close:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(255, 217, 61, 0.6);
+      }
+
+      /* ─── Responsive ─── */
+      @media (max-width: 768px) {
+        .celebration-text h1 {
+          font-size: 2.2rem;
+          letter-spacing: 2px;
+        }
+        .celebration-text h2 {
+          font-size: 1.1rem;
+        }
+        .celebration-text .emoji-row {
+          font-size: 1.6rem;
+        }
+        .celebration-text {
+          top: 8%;
+          padding: 0 10px;
+        }
+        .horse-counter {
+          top: 10px;
+          right: 10px;
+          padding: 7px 12px;
+          font-size: 0.85rem;
+          border-radius: 8px;
+        }
+        .horse-counter span {
+          font-size: 1rem;
+        }
+        .message {
+          bottom: 130px;
+          padding: 0 15px;
+        }
+        .message p {
+          font-size: 0.9rem;
+        }
+        .notification-box {
+          padding: 25px 20px;
+          max-width: 90vw;
+          margin: 0 15px;
+          border-radius: 16px;
+        }
+        .notification-box .notif-emoji {
+          font-size: 2.2rem;
+          margin-bottom: 10px;
+        }
+        .notification-box .notif-text {
+          font-size: 1rem;
+          line-height: 1.7;
+        }
+        .notification-box .notif-close {
+          margin-top: 18px;
+          padding: 10px 28px;
+          font-size: 0.95rem;
+        }
+        .ground {
+          height: 90px;
+        }
+        .ground::before {
+          height: 45px;
+        }
+        .grass {
+          bottom: 40px;
+        }
+        .horse-container {
+          bottom: 45px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .celebration-text h1 {
+          font-size: 1.5rem;
+          letter-spacing: 1px;
+        }
+        .celebration-text h2 {
+          font-size: 0.85rem;
+          margin-top: 6px;
+        }
+        .celebration-text .emoji-row {
+          font-size: 1.2rem;
+          margin-top: 8px;
+        }
+        .celebration-text {
+          top: 5%;
+        }
+        .horse-counter {
+          top: 6px;
+          right: 6px;
+          padding: 5px 10px;
+          font-size: 0.75rem;
+        }
+        .horse-counter span {
+          font-size: 0.9rem;
+        }
+        .message p {
+          font-size: 0.8rem;
+        }
+        .notification-box {
+          padding: 20px 16px;
+          max-width: 92vw;
+          margin: 0 10px;
+        }
+        .notification-box .notif-emoji {
+          font-size: 1.8rem;
+        }
+        .notification-box .notif-text {
+          font-size: 0.9rem;
+          line-height: 1.65;
+        }
+        .notification-box .notif-close {
+          padding: 9px 22px;
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-height: 500px) {
+        .celebration-text {
+          top: 3%;
+        }
+        .celebration-text h1 {
+          font-size: 1.8rem;
+        }
+        .celebration-text h2 {
+          font-size: 0.9rem;
+        }
+        .message {
+          bottom: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- Celebration Text -->
+    <div class="celebration-text">
+      <h1>🎆 Happy New Year 2026 🎆</h1>
+      <h2>✨ Wishing You Joy, Love & Prosperity ✨</h2>
+      <div class="emoji-row">🎉🐴🎊🐎🎇🏇🎆</div>
+    </div>
+
+    <!-- Confetti container -->
+    <div id="confetti"></div>
+
+    <!-- Ground -->
+    <div class="ground"></div>
+    <div class="grass" id="grass"></div>
+
+    <!-- Horse counter -->
+    <div class="horse-counter" id="horseCounter">
+      🐴 Horses: <span id="horseCount">5</span> / 36 <br /><small
+        style="opacity: 0.7"
+        >Click to add more!</small
+      >
+    </div>
+
+    <!-- Horses will be injected by JS -->
+    <div id="horses"></div>
+
+    <!-- Message -->
+    <div class="message">
+      <p>🐴 May the horses of fortune gallop into your life this year! 🐴</p>
+    </div>
+
+    <!-- Notification popup -->
+    <div class="notification-overlay" id="notificationOverlay">
+      <div class="notification-box">
+        <div class="notif-emoji">🎊🐴🎆</div>
+        <p class="notif-text">
+          Chúc mọi người có một năm vui vẻ và bình an, chúc cho sức khỏe và
+          thành công luôn là những người bạn đồng hành theo các bạn! 🎉✨🐴
+        </p>
+        <button class="notif-close" id="notifCloseBtn">🐴 Tiếp tục 🐴</button>
+      </div>
+    </div>
+
+    <script>
+      // ─── STARS ───
+      const isMobile = window.innerWidth <= 768;
+      const starsEl = document.getElementById("stars");
+      for (let i = 0; i < (isMobile ? 60 : 120); i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        const size = Math.random() * 3 + 1;
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 60 + "%";
+        star.style.animationDelay = Math.random() * 3 + "s";
+        star.style.animationDuration = Math.random() * 2 + 1.5 + "s";
+        starsEl.appendChild(star);
+      }
+
+      // ─── GRASS ───
+      const grassEl = document.getElementById("grass");
+      const grassCount = isMobile ? 80 : 200;
+      for (let i = 0; i < grassCount; i++) {
+        const blade = document.createElement("div");
+        blade.classList.add("grass-blade");
+        blade.style.left = (i / grassCount) * 100 + "%";
+        blade.style.height = Math.random() * 20 + 10 + "px";
+        blade.style.animationDelay = Math.random() * 3 + "s";
+        grassEl.appendChild(blade);
+      }
+
+      // ─── CONFETTI ───
+      const confettiContainer = document.getElementById("confetti");
+      const confettiColors = [
+        "#ff6b6b",
+        "#ffd93d",
+        "#6bff6b",
+        "#6bd9ff",
+        "#d96bff",
+        "#ff9f43",
+        "#ee5a24",
+      ];
+      for (let i = 0; i < (isMobile ? 20 : 50); i++) {
+        const c = document.createElement("div");
+        c.classList.add("confetti");
+        const size = Math.random() * 8 + 4;
+        c.style.width = size + "px";
+        c.style.height = size + (Math.random() > 0.5 ? size : 0) + "px";
+        c.style.left = Math.random() * 100 + "%";
+        c.style.background =
+          confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        c.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+        c.style.animationDuration = Math.random() * 5 + 5 + "s";
+        c.style.animationDelay = Math.random() * 10 + "s";
+        c.style.opacity = Math.random() * 0.7 + 0.3;
+        confettiContainer.appendChild(c);
+      }
+
+      // ─── HORSES (SVG) ───
+      function createHorseSVG(color, maneColor, ribbonColor) {
+        return `
+            <svg viewBox="0 0 160 120" width="160" height="120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Body -->
+                <ellipse cx="80" cy="65" rx="40" ry="22" fill="${color}"/>
+                <!-- Neck -->
+                <path d="M 110 55 Q 125 30 120 15" stroke="${color}" stroke-width="14" fill="none" stroke-linecap="round"/>
+                <!-- Head -->
+                <ellipse cx="125" cy="14" rx="16" ry="10" fill="${color}" transform="rotate(-15, 125, 14)"/>
+                <!-- Ear -->
+                <polygon points="132,5 136,-5 128,2" fill="${color}"/>
+                <polygon points="120,6 124,-4 116,3" fill="${color}"/>
+                <!-- Eye -->
+                <circle cx="130" cy="12" r="2.5" fill="white"/>
+                <circle cx="131" cy="12" r="1.2" fill="#222"/>
+                <!-- Nostril -->
+                <circle cx="139" cy="16" r="1.5" fill="#333"/>
+                <!-- Mouth -->
+                <path d="M 137 20 Q 140 22 138 24" stroke="#333" stroke-width="0.8" fill="none"/>
+                <!-- Mane -->
+                <path d="M 118 8 Q 110 15 112 28 Q 108 20 106 35 Q 104 25 100 40" stroke="${maneColor}" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <!-- Tail -->
+                <path d="M 40 58 Q 20 45 15 55 Q 10 40 8 60 Q 5 48 3 62" stroke="${maneColor}" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <!-- Front legs -->
+                <g class="front-legs">
+                    <line x1="95" y1="82" x2="100" y2="110" stroke="${color}" stroke-width="6" stroke-linecap="round"/>
+                    <line x1="85" y1="84" x2="88" y2="112" stroke="${color}" stroke-width="6" stroke-linecap="round"/>
+                    <rect x="96" y="108" width="8" height="5" rx="2" fill="#333"/>
+                    <rect x="84" y="110" width="8" height="5" rx="2" fill="#333"/>
+                </g>
+                <!-- Back legs -->
+                <g class="back-legs">
+                    <line x1="65" y1="82" x2="60" y2="112" stroke="${color}" stroke-width="6" stroke-linecap="round"/>
+                    <line x1="55" y1="84" x2="52" y2="110" stroke="${color}" stroke-width="6" stroke-linecap="round"/>
+                    <rect x="56" y="110" width="8" height="5" rx="2" fill="#333"/>
+                    <rect x="48" y="108" width="8" height="5" rx="2" fill="#333"/>
+                </g>
+                <!-- Ribbon / decoration -->
+                <path d="M 90 50 Q 95 43 100 50" stroke="${ribbonColor}" stroke-width="2" fill="${ribbonColor}" opacity="0.8"/>
+                <circle cx="95" cy="48" r="3" fill="${ribbonColor}" opacity="0.9"/>
+                <!-- Saddle -->
+                <path d="M 70 48 Q 80 38 95 48" fill="${ribbonColor}" opacity="0.4" stroke="${ribbonColor}" stroke-width="1"/>
+            </svg>`;
+      }
+
+      const horsesContainer = document.getElementById("horses");
+      const horseCountEl = document.getElementById("horseCount");
+      const MAX_HORSES = 36;
+      const allHorses = []; // track all horse objects for animation
+
+      const horseColorPalette = [
+        { color: "#8B4513", mane: "#2a1506" },
+        { color: "#D2691E", mane: "#4a2008" },
+        { color: "#F4A460", mane: "#8B4513" },
+        { color: "#fff8ee", mane: "#cccccc" },
+        { color: "#555555", mane: "#222222" },
+        { color: "#A0522D", mane: "#3a1a08" },
+        { color: "#CD853F", mane: "#6b3a10" },
+        { color: "#DEB887", mane: "#8B6914" },
+        { color: "#BC8F8F", mane: "#6a4040" },
+        { color: "#c0c0c0", mane: "#888888" },
+      ];
+      const ribbonColors = [
+        "#ff6b6b",
+        "#ffd93d",
+        "#6bff6b",
+        "#6bd9ff",
+        "#d96bff",
+        "#ff9f43",
+        "#ee5a24",
+        "#00d2d3",
+        "#ff6348",
+        "#7bed9f",
+      ];
+
+      function addHorse(startX) {
+        if (allHorses.length >= MAX_HORSES) return;
+
+        const palette =
+          horseColorPalette[
+            Math.floor(Math.random() * horseColorPalette.length)
+          ];
+        const ribbon =
+          ribbonColors[Math.floor(Math.random() * ribbonColors.length)];
+        const speed = 1 + Math.random() * 2.5; // pixels per frame
+        const bottom = 55 + Math.random() * 30;
+        const goingRight = Math.random() > 0.5;
+        const x =
+          startX !== undefined
+            ? startX
+            : goingRight
+              ? -160
+              : window.innerWidth + 10;
+
+        const container = document.createElement("div");
+        container.classList.add("horse-container");
+        container.style.bottom = bottom + "px";
+        container.style.left = x + "px";
+
+        const horseEl = document.createElement("div");
+        horseEl.classList.add("horse");
+        horseEl.style.animationDuration = 0.3 + Math.random() * 0.2 + "s";
+
+        horseEl.innerHTML = createHorseSVG(palette.color, palette.mane, ribbon);
+        container.appendChild(horseEl);
+        horsesContainer.appendChild(container);
+
+        const horseObj = {
+          el: container,
+          horseInner: horseEl,
+          x: x,
+          speed: speed,
+          goingRight: goingRight,
+          bottom: bottom,
+        };
+
+        // Set initial direction
+        horseEl.style.transform = goingRight ? "scaleX(1)" : "scaleX(-1)";
+
+        allHorses.push(horseObj);
+        updateHorseCounter();
+      }
+
+      function updateHorseCounter() {
+        horseCountEl.textContent = allHorses.length;
+      }
+
+      // Smooth horse movement loop
+      function moveHorses() {
+        const screenW = window.innerWidth;
+        for (const h of allHorses) {
+          if (h.goingRight) {
+            h.x += h.speed;
+            if (h.x > screenW + 20) {
+              h.goingRight = false;
+              h.horseInner.style.transform = "scaleX(-1)";
+            }
+          } else {
+            h.x -= h.speed;
+            if (h.x < -180) {
+              h.goingRight = true;
+              h.horseInner.style.transform = "scaleX(1)";
+            }
+          }
+          h.el.style.left = h.x + "px";
+        }
+        requestAnimationFrame(moveHorses);
+      }
+
+      // Initial horses
+      const sw = window.innerWidth;
+      const initialConfigs = [
+        { x: sw * 0.08, right: true },
+        { x: sw * 0.3, right: false },
+        { x: sw * 0.55, right: true },
+        { x: sw * 0.18, right: false },
+        { x: sw * 0.42, right: true },
+      ];
+      initialConfigs.forEach((cfg) => {
+        const palette =
+          horseColorPalette[
+            Math.floor(Math.random() * horseColorPalette.length)
+          ];
+        const ribbon =
+          ribbonColors[Math.floor(Math.random() * ribbonColors.length)];
+        const speed = 1 + Math.random() * 2.5;
+        const bottom = 55 + Math.random() * 30;
+
+        const container = document.createElement("div");
+        container.classList.add("horse-container");
+        container.style.bottom = bottom + "px";
+        container.style.left = cfg.x + "px";
+
+        const horseEl = document.createElement("div");
+        horseEl.classList.add("horse");
+        horseEl.style.animationDuration = 0.3 + Math.random() * 0.2 + "s";
+        horseEl.innerHTML = createHorseSVG(palette.color, palette.mane, ribbon);
+        horseEl.style.transform = cfg.right ? "scaleX(1)" : "scaleX(-1)";
+        container.appendChild(horseEl);
+        horsesContainer.appendChild(container);
+
+        allHorses.push({
+          el: container,
+          horseInner: horseEl,
+          x: cfg.x,
+          speed: speed,
+          goingRight: cfg.right,
+          bottom: bottom,
+        });
+      });
+      updateHorseCounter();
+      moveHorses();
+
+      // ─── FIREWORKS (Canvas) ───
+      const canvas = document.getElementById("fireworksCanvas");
+      const ctx = canvas.getContext("2d");
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      class Particle {
+        constructor(x, y, color, velocity, decay, gravity) {
+          this.x = x;
+          this.y = y;
+          this.color = color;
+          this.velocity = velocity;
+          this.alpha = 1;
+          this.decay = decay || Math.random() * 0.015 + 0.01;
+          this.gravity = gravity || 0.05;
+          this.trail = [];
+          this.maxTrail = 5;
+        }
+        update() {
+          this.trail.push({ x: this.x, y: this.y, alpha: this.alpha });
+          if (this.trail.length > this.maxTrail) this.trail.shift();
+          this.velocity.x *= 0.98;
+          this.velocity.y *= 0.98;
+          this.velocity.y += this.gravity;
+          this.x += this.velocity.x;
+          this.y += this.velocity.y;
+          this.alpha -= this.decay;
+        }
+        draw() {
+          // Trail
+          for (let i = 0; i < this.trail.length; i++) {
+            const t = this.trail[i];
+            ctx.beginPath();
+            ctx.arc(t.x, t.y, 1.5, 0, Math.PI * 2);
+            ctx.fillStyle = this.color.replace(
+              "1)",
+              t.alpha * (i / this.trail.length) * 0.5 + ")",
+            );
+            ctx.fill();
+          }
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = this.color.replace("1)", this.alpha + ")");
+          ctx.fill();
+        }
+      }
+
+      class Firework {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = canvas.height;
+          this.targetY = Math.random() * canvas.height * 0.4 + 50;
+          this.speed = Math.random() * 3 + 4;
+          this.angle = -Math.PI / 2 + (Math.random() - 0.5) * 0.3;
+          this.velocity = {
+            x: Math.cos(this.angle) * this.speed,
+            y: Math.sin(this.angle) * this.speed,
+          };
+          this.particles = [];
+          this.exploded = false;
+          this.alpha = 1;
+          const hue = Math.random() * 360;
+          this.color = `hsla(${hue}, 100%, 65%, 1)`;
+          this.trail = [];
+        }
+        update() {
+          if (!this.exploded) {
+            this.trail.push({ x: this.x, y: this.y });
+            if (this.trail.length > 15) this.trail.shift();
+            this.x += this.velocity.x;
+            this.y += this.velocity.y;
+            this.velocity.y += 0.02;
+            if (this.y <= this.targetY || this.velocity.y >= 0) {
+              this.explode();
+            }
+          }
+          this.particles.forEach((p) => p.update());
+          this.particles = this.particles.filter((p) => p.alpha > 0);
+        }
+        explode() {
+          this.exploded = true;
+          const count = Math.floor(Math.random() * 30) + 25;
+          const hue = Math.random() * 360;
+          const type = Math.floor(Math.random() * 3);
+          for (let i = 0; i < count; i++) {
+            let angle, speed, color;
+            if (type === 0) {
+              // Circular burst
+              angle = ((Math.PI * 2) / count) * i;
+              speed = Math.random() * 4 + 2;
+            } else if (type === 1) {
+              // Random burst
+              angle = Math.random() * Math.PI * 2;
+              speed = Math.random() * 5 + 1;
+            } else {
+              // Ring
+              angle = ((Math.PI * 2) / count) * i;
+              speed = 3 + Math.random() * 0.5;
+            }
+            const hueVariation = hue + Math.random() * 40 - 20;
+            const lightness = 50 + Math.random() * 30;
+            color = `hsla(${hueVariation}, 100%, ${lightness}%, 1)`;
+            this.particles.push(
+              new Particle(
+                this.x,
+                this.y,
+                color,
+                { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed },
+                Math.random() * 0.012 + 0.006,
+                0.04,
+              ),
+            );
+          }
+          // Sparkle ring
+          for (let i = 0; i < 10; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = Math.random() * 1.5 + 0.5;
+            this.particles.push(
+              new Particle(
+                this.x,
+                this.y,
+                `hsla(${hue + 180}, 100%, 80%, 1)`,
+                { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed },
+                Math.random() * 0.02 + 0.01,
+                0.02,
+              ),
+            );
+          }
+        }
+        draw() {
+          if (!this.exploded) {
+            // Draw rocket trail
+            for (let i = 0; i < this.trail.length; i++) {
+              const t = this.trail[i];
+              ctx.beginPath();
+              ctx.arc(t.x, t.y, 1.5, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(255, 200, 100, ${(i / this.trail.length) * 0.5})`;
+              ctx.fill();
+            }
+            // Draw rocket
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(255, 230, 150, 0.9)";
+            ctx.fill();
+          }
+          this.particles.forEach((p) => p.draw());
+        }
+        get done() {
+          return this.exploded && this.particles.length === 0;
+        }
+      }
+
+      let fireworks = [];
+      let frameCount = 0;
+      const MAX_FIREWORKS = isMobile ? 15 : 25; // Performance cap
+      let lastClickTime = 0;
+      const CLICK_THROTTLE = isMobile ? 200 : 150; // ms between clicks
+
+      // ─── Focus Mode: fireworks target near mouse for 2s ───
+      let focusMode = false;
+      let focusX = 0;
+      let focusY = 0;
+      let focusTimer = null;
+
+      function createFocusedFirework() {
+        const fw = new Firework();
+        // Launch from bottom, but aim near the focus point with some spread
+        const spread = 80;
+        fw.targetY = focusY + (Math.random() - 0.5) * spread;
+        fw.targetY = Math.max(30, fw.targetY);
+        // Adjust x launch and target so the rocket curves toward the focus area
+        const targetX = focusX + (Math.random() - 0.5) * spread;
+        fw.x = targetX + (Math.random() - 0.5) * 100;
+        const dx = targetX - fw.x;
+        const dy = fw.targetY - fw.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const spd = fw.speed;
+        fw.velocity.x = (dx / dist) * spd;
+        fw.velocity.y = (dy / dist) * spd;
+        return fw;
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        // Fade effect
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.globalCompositeOperation = "lighter";
+
+        frameCount++;
+
+        if (focusMode) {
+          // Rapid focused fireworks near the click point (capped)
+          if (fireworks.length < MAX_FIREWORKS) {
+            if (frameCount % 10 === 0 || Math.random() < 0.1) {
+              fireworks.push(createFocusedFirework());
+            }
+            if (Math.random() < 0.04 && fireworks.length < MAX_FIREWORKS - 1) {
+              fireworks.push(createFocusedFirework());
+            }
+          }
+        } else {
+          // Normal random fireworks (capped)
+          if (fireworks.length < MAX_FIREWORKS) {
+            if (frameCount % 50 === 0 || Math.random() < 0.02) {
+              fireworks.push(new Firework());
+            }
+            if (Math.random() < 0.005 && fireworks.length < MAX_FIREWORKS - 1) {
+              fireworks.push(new Firework());
+            }
+          }
+        }
+
+        fireworks.forEach((fw) => {
+          fw.update();
+          fw.draw();
+        });
+        fireworks = fireworks.filter((fw) => !fw.done);
+      }
+
+      // Launch a few fireworks immediately
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => fireworks.push(new Firework()), i * 600);
+      }
+
+      animate();
+
+      // ─── Reset horses to 4 ───
+      function resetHorsesTo4() {
+        // Remove all horse DOM elements
+        while (horsesContainer.firstChild) {
+          horsesContainer.removeChild(horsesContainer.firstChild);
+        }
+        allHorses.length = 0;
+
+        // Spawn 4 fresh horses
+        const rsw = window.innerWidth;
+        const resetConfigs = [
+          { x: rsw * 0.08, right: true },
+          { x: rsw * 0.35, right: false },
+          { x: rsw * 0.55, right: true },
+          { x: rsw * 0.2, right: false },
+        ];
+        resetConfigs.forEach((cfg) => {
+          const palette =
+            horseColorPalette[
+              Math.floor(Math.random() * horseColorPalette.length)
+            ];
+          const ribbon =
+            ribbonColors[Math.floor(Math.random() * ribbonColors.length)];
+          const speed = 1 + Math.random() * 2.5;
+          const bottom = 55 + Math.random() * 30;
+
+          const container = document.createElement("div");
+          container.classList.add("horse-container");
+          container.style.bottom = bottom + "px";
+          container.style.left = cfg.x + "px";
+
+          const horseEl = document.createElement("div");
+          horseEl.classList.add("horse");
+          horseEl.style.animationDuration = 0.3 + Math.random() * 0.2 + "s";
+          horseEl.innerHTML = createHorseSVG(
+            palette.color,
+            palette.mane,
+            ribbon,
+          );
+          horseEl.style.transform = cfg.right ? "scaleX(1)" : "scaleX(-1)";
+          container.appendChild(horseEl);
+          horsesContainer.appendChild(container);
+
+          allHorses.push({
+            el: container,
+            horseInner: horseEl,
+            x: cfg.x,
+            speed: speed,
+            goingRight: cfg.right,
+            bottom: bottom,
+          });
+        });
+        updateHorseCounter();
+      }
+
+      // ─── Notification popup ───
+      const notifOverlay = document.getElementById("notificationOverlay");
+      const notifCloseBtn = document.getElementById("notifCloseBtn");
+      let notifShowing = false;
+
+      function showNotification() {
+        notifShowing = true;
+        notifOverlay.classList.add("show");
+      }
+
+      notifCloseBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        notifOverlay.classList.remove("show");
+        notifShowing = false;
+        // Reset horses to 4 after closing
+        resetHorsesTo4();
+      });
+
+      // ─── Click to launch firework + add horse + focus mode ───
+      document.addEventListener("click", (e) => {
+        // Don't process clicks while notification is showing
+        if (notifShowing) return;
+
+        // Throttle rapid clicks for performance
+        const now = Date.now();
+        if (now - lastClickTime < CLICK_THROTTLE) return;
+        lastClickTime = now;
+
+        // Activate focus mode: all fireworks aim near this spot for 2s
+        focusX = e.clientX;
+        focusY = e.clientY;
+        focusMode = true;
+
+        // Clear any existing timer and set a new 2-second timeout
+        if (focusTimer) clearTimeout(focusTimer);
+        focusTimer = setTimeout(() => {
+          focusMode = false;
+          focusTimer = null;
+        }, 2000);
+
+        // Instant burst of fireworks at click point (capped)
+        const burstCount = Math.min(3, MAX_FIREWORKS - fireworks.length);
+        for (let i = 0; i < burstCount; i++) {
+          fireworks.push(createFocusedFirework());
+        }
+
+        // Add a new horse at click X position
+        if (allHorses.length < MAX_HORSES) {
+          addHorse(e.clientX - 80);
+
+          // Check if we just hit 36 horses
+          if (allHorses.length >= MAX_HORSES) {
+            // Short delay so user sees the 36th horse appear
+            setTimeout(showNotification, 300);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
