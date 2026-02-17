@@ -544,7 +544,7 @@
 
     <!-- Horse counter -->
     <div class="horse-counter" id="horseCounter">
-      🐴 Horses: <span id="horseCount">5</span> /
+      🐴 Horses: <span id="horseCount">4</span> /
       <span id="maxHorseDisplay">36</span> <br /><small style="opacity: 0.7"
         >Click to add more!</small
       >
@@ -574,7 +574,7 @@
       // ─── STARS ───
       const isMobile = window.innerWidth <= 768;
       const starsEl = document.getElementById("stars");
-      for (let i = 0; i < (isMobile ? 60 : 120); i++) {
+      for (let i = 0; i < (isMobile ? 30 : 120); i++) {
         const star = document.createElement("div");
         star.classList.add("star");
         const size = Math.random() * 3 + 1;
@@ -589,7 +589,7 @@
 
       // ─── GRASS ───
       const grassEl = document.getElementById("grass");
-      const grassCount = isMobile ? 80 : 200;
+      const grassCount = isMobile ? 40 : 200;
       for (let i = 0; i < grassCount; i++) {
         const blade = document.createElement("div");
         blade.classList.add("grass-blade");
@@ -610,7 +610,7 @@
         "#ff9f43",
         "#ee5a24",
       ];
-      for (let i = 0; i < (isMobile ? 20 : 50); i++) {
+      for (let i = 0; i < (isMobile ? 10 : 50); i++) {
         const c = document.createElement("div");
         c.classList.add("confetti");
         const size = Math.random() * 8 + 4;
@@ -674,7 +674,7 @@
 
       const horsesContainer = document.getElementById("horses");
       const horseCountEl = document.getElementById("horseCount");
-      const MAX_HORSES = isMobile ? 15 : 36;
+      const MAX_HORSES = isMobile ? 10 : 36;
       const allHorses = []; // track all horse objects for animation
 
       const horseColorPalette = [
@@ -778,13 +778,20 @@
 
       // Initial horses
       const sw = window.innerWidth;
-      const initialConfigs = [
-        { x: sw * 0.08, right: true },
-        { x: sw * 0.3, right: false },
-        { x: sw * 0.55, right: true },
-        { x: sw * 0.18, right: false },
-        { x: sw * 0.42, right: true },
-      ];
+      const initialConfigs = isMobile
+        ? [
+            { x: sw * 0.08, right: true },
+            { x: sw * 0.35, right: false },
+            { x: sw * 0.6, right: true },
+            { x: sw * 0.2, right: false },
+          ]
+        : [
+            { x: sw * 0.08, right: true },
+            { x: sw * 0.3, right: false },
+            { x: sw * 0.55, right: true },
+            { x: sw * 0.18, right: false },
+            { x: sw * 0.42, right: true },
+          ];
       initialConfigs.forEach((cfg) => {
         const palette =
           horseColorPalette[
@@ -1065,14 +1072,20 @@
         }
         allHorses.length = 0;
 
-        // Spawn 4 fresh horses
+        // Spawn fresh horses (3 on mobile, 4 on desktop)
         const rsw = window.innerWidth;
-        const resetConfigs = [
-          { x: rsw * 0.08, right: true },
-          { x: rsw * 0.35, right: false },
-          { x: rsw * 0.55, right: true },
-          { x: rsw * 0.2, right: false },
-        ];
+        const resetConfigs = isMobile
+          ? [
+              { x: rsw * 0.1, right: true },
+              { x: rsw * 0.4, right: false },
+              { x: rsw * 0.65, right: true },
+            ]
+          : [
+              { x: rsw * 0.08, right: true },
+              { x: rsw * 0.35, right: false },
+              { x: rsw * 0.55, right: true },
+              { x: rsw * 0.2, right: false },
+            ];
         resetConfigs.forEach((cfg) => {
           const palette =
             horseColorPalette[
